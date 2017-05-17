@@ -5,14 +5,13 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.RemoteException;
 import android.view.View;
 
-import com.season.SeasonApplication;
-import com.season.hookutil.HookUtil;
-import com.season.hookutil.LogTool;
-import com.season.hookutil.Utils;
+import com.season.pluginlib.PluginManager;
+import com.season.pluginlib.util.FileUtil;
+import com.season.pluginlib.util.LogTool;
 
-import java.io.File;
 
 public class MainActivity extends Activity {
 
@@ -20,6 +19,16 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String assetsName = "plugindemo-debug.apk";
+        assetsName = "EnglishV13.0.4.apk";
+        FileUtil.copyAssets(assetsName);
+        try {
+            int result = PluginManager.getInstance().installPackage(getFileStreamPath(assetsName).getAbsolutePath(), 0);
+            LogTool.log("installPackage>> "+result);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
 
         findViewById(R.id.main_button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,11 +42,13 @@ public class MainActivity extends Activity {
                 try {
                     Intent t = new Intent();
                     if (true) {
-                        t.setComponent(new ComponentName("com.season.plugindemo",
-                                "com.season.plugindemo.MainActivity"));
-                    } else {
                         t.setComponent(new ComponentName("com.season.genglish",
                                 "com.season.genglish.ui.SplashActivity"));
+                    } else {
+                        t.setComponent(new ComponentName("com.season.plugindemo",
+                                "com.season.plugindemo.ResourceActivity"));
+                        t.setComponent(new ComponentName("com.season.plugindemo",
+                                "com.season.plugindemo.MainActivity"));
                         t.setComponent(new ComponentName("com.weishu.upf.ams_pms_hook.app",
                                 "com.weishu.upf.ams_pms_hook.app.MainActivity"));
                     }
@@ -53,24 +64,33 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        LogTool.log(SeasonApplication.sApplicationContext.getPackageName());
     }
 
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
 
-        File apkFile = new File(android.os.Environment.getExternalStorageDirectory(), "plugindemo-debug.apk");
-
-        //激进方案：Hook掉ClassLoader，使用多LoadedAPK
-        //HookUtil.hookClassLoader(apkFile);
-
+    //    LogTool.log("attachBaseContext");
         //保守方案：委托系统，让系统帮忙加载 使用单LoadedAPK，出现SeasonApplication.sApplicationContext.getPackageName()包名异常
-        Utils.copy(apkFile);
-        Utils.upZipFile(apkFile);
-        HookUtil.patchClassLoader(getClassLoader(), getFileStreamPath(apkFile.getName()), getFileStreamPath("classes.dex"));
+        //sdcard apk文件
+/*        String fileName = "plugindemo-debug.apk";
+        File apkFile = new File(android.os.Environment.getExternalStorageDirectory(), fileName);
+        FileUtil.copy(apkFile);
+        FileUtil.upZipFile(apkFile);
+        HookUtil.patchClassLoader(getClassLoader(), getFileStreamPath(fileName), getFileStreamPath("classes.dex"));*/
 
-        HookUtil.hookSystemHandler();
-        HookUtil.hookAms();
+        //assets apk文件
+/*        String assetsName = "plugindemo-debug.apk";
+        FileUtil.copyAssets(assetsName);
+        FileUtil.upZipFile(getFileStreamPath(assetsName));
+        HookUtil.patchClassLoader(getClassLoader(), getFileStreamPath(assetsName), getFileStreamPath("classes.dex"));*/
+
+    //    String assetsName = "plugindemo-debug.apk";
+        // assetsName = "app-debug.apk";
+     //   FileUtil.copyAssets(assetsName);
+        //激进方案：Hook掉ClassLoader，使用多LoadedAPK
+     //   HookUtil.hookClassLoader(getFileStreamPath(assetsName));
+
+      //  HookUtil.hookResource(getFileStreamPath(assetsName).getAbsolutePath());
     }
 }
