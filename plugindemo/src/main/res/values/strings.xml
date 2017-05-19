@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Plugindemo</string>
+    <string name="plugin_desc">After click</string>
+</resources>

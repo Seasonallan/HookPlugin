@@ -37,6 +37,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
 import android.content.pm.ServiceInfo;
+import android.os.Binder;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Handler;
@@ -51,6 +52,7 @@ import com.season.pluginlib.reflect.MethodUtils;
 import com.season.pluginlib.stub.ActivityStub;
 import com.season.pluginlib.stub.ServiceStub;
 import com.season.pluginlib.util.LogPlugin;
+import com.season.pluginlib.util.LogTool;
 import com.season.pluginlib.util.PluginClassLoader;
 import com.season.pluginlib.util.PluginDirHelper;
 
@@ -168,24 +170,25 @@ public class PluginProcessManager {
         return sPluginClassLoaderCache.get(pkg);
     }
 
-
     public static void preLoadApk(Context hostContext, ComponentInfo pluginInfo) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, PackageManager.NameNotFoundException, ClassNotFoundException {
+
+
         if (pluginInfo == null && hostContext == null) {
             return;
         }
+
         if (pluginInfo != null && getPluginContext(pluginInfo.packageName) != null) {
             return;
         }
 
         /*添加插件的LoadedApk对象到ActivityThread.mPackages*/
-
         boolean found = false;
         synchronized (sPluginLoadedApkCache) {
             Object object = ActivityThreadCompat.currentActivityThread();
             if (object != null) {
                 Object mPackagesObj = FieldUtils.readField(object, "mPackages");
                 Object containsKeyObj = MethodUtils.invokeMethod(mPackagesObj, "containsKey", pluginInfo.packageName);
-                if (containsKeyObj instanceof Boolean && !(Boolean) containsKeyObj) {
+                if (true && containsKeyObj instanceof Boolean && !(Boolean) containsKeyObj) {
                     final Object loadedApk;
                     if (VERSION.SDK_INT >= VERSION_CODES.HONEYCOMB) {
                         loadedApk = MethodUtils.invokeMethod(object, "getPackageInfoNoCheck", pluginInfo.applicationInfo, CompatibilityInfoCompat.DEFAULT_COMPATIBILITY_INFO());
@@ -195,7 +198,6 @@ public class PluginProcessManager {
                     sPluginLoadedApkCache.put(pluginInfo.packageName, loadedApk);
 
                 /*添加ClassLoader LoadedApk.mClassLoader*/
-
                     String optimizedDirectory = PluginDirHelper.getPluginDalvikCacheDir(hostContext, pluginInfo.packageName);
                     String libraryPath = PluginDirHelper.getPluginNativeLibraryDir(hostContext, pluginInfo.packageName);
                     String apk = pluginInfo.applicationInfo.publicSourceDir;
@@ -225,14 +227,14 @@ public class PluginProcessManager {
             }
         }
         if (found) {
-            PluginProcessManager.preMakeApplication(hostContext, pluginInfo);
+            PluginProcessManager.preMakeApplication(pluginInfo);
         }
     }
 
     private static AtomicBoolean mExec = new AtomicBoolean(false);
     private static Handler sHandle = new Handler(Looper.getMainLooper());
 
-    private static void preMakeApplication(Context hostContext, ComponentInfo pluginInfo) {
+    private static void preMakeApplication(ComponentInfo pluginInfo) {
         try {
             final Object loadedApk = sPluginLoadedApkCache.get(pluginInfo.packageName);
             if (loadedApk != null) {
@@ -322,6 +324,11 @@ public class PluginProcessManager {
         return sApplicationsCache.get(packageName);
     }
 
+    public static void removePackage(String packageName){
+        if (sApplicationsCache.containsKey(packageName)){
+            sApplicationsCache.remove(packageName);
+        }
+    }
 
     private static Context getBaseContext(Context c) {
         if (c instanceof ContextWrapper) {
@@ -385,7 +392,7 @@ public class PluginProcessManager {
             try {
                 SYSTEM_SERVICE_MAP = FieldUtils.readStaticField(baseContext.getClass(), "SYSTEM_SERVICE_MAP");
             } catch (Exception e) {
-                LogPlugin.e(TAG, "readStaticField(SYSTEM_SERVICE_MAP) from %s fail", e, baseContext.getClass());
+              //  LogPlugin.e(TAG, "readStaticField(SYSTEM_SERVICE_MAP) from %s fail", e, baseContext.getClass());
             }
             if (SYSTEM_SERVICE_MAP == null) {
                 try {

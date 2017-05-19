@@ -1,10 +1,10 @@
-package com.season.design;
+package com.season.design.proxy;
 
 import com.mdit.library.proxy.CallbackFilter;
 import com.mdit.library.proxy.Enhancer;
 import com.mdit.library.proxy.MethodInterceptor;
 import com.mdit.library.proxy.MethodProxy;
-import com.season.SeasonApplication;
+import com.season.hookplugin.SeasonApplication;
 
 import java.lang.reflect.Method;
 
