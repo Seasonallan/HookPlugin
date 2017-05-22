@@ -17,12 +17,22 @@ public class ResourceActivity extends Activity {
 
     TextView mTextView;
     Context mContext;
+    SameModel mSameModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        View sameModel = findViewById(R.id.plugin_samemodel);
+        Log.e("SeasonLog", "资源类加载器 "+ sameModel.getClass().getClassLoader());
+        Log.e("SeasonLog", "SameModel加载器 "+ SameModel.class.getClassLoader());
+
+        //如果与宿主同进程同包名同类名,此处会发生错误ava.lang.ClassCastException: com.season.plugindemo.SameModel cannot be cast to com.season.plugindemo.SameModel
+        mSameModel = (SameModel) sameModel;
+
+
         mContext = this;
         mTextView = (TextView) findViewById(R.id.plugin_text);
         mTextView.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +51,6 @@ public class ResourceActivity extends Activity {
             public void onClick(View v) {
                 Toast.makeText(ResourceActivity.this, "success", Toast.LENGTH_SHORT).show();
                 mTextView.setText(R.string.plugin_desc);
-                Toast.makeText(ResourceActivity.this, "success", Toast.LENGTH_SHORT).show();
                 Log.e("SeasonLog", "success");
             }
         });

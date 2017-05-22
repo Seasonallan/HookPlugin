@@ -4,7 +4,7 @@ import com.mdit.library.proxy.CallbackFilter;
 import com.mdit.library.proxy.Enhancer;
 import com.mdit.library.proxy.MethodInterceptor;
 import com.mdit.library.proxy.MethodProxy;
-import com.season.hookplugin.SeasonApplication;
+import com.season.test.SeasonApplication;
 
 import java.lang.reflect.Method;
 

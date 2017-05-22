@@ -23,6 +23,10 @@
         </activity>
 
         <activity android:name=".ResourceActivity" />
+        <activity android:name=".MainActivitySingleInstance" android:launchMode="singleInstance" />
+        <activity android:name=".MainActivitySingleTask" android:launchMode="singleTask" />
+        <activity android:name=".MainActivitySingleTop" android:launchMode="singleTop" />
+        <activity android:name=".MainActivityStandard" android:launchMode="standard" />
 
     </application>
 

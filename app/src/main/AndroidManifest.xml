@@ -13,10 +13,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".SeasonApplication"
+        android:name="com.season.test.SeasonApplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplachActivity">
+        <activity android:name="com.season.test.ui.SplachActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -24,15 +24,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.season.test.ui.MainActivity" />
 
         <!--插件管理服务，提供插件的包管理，进程管理。-->
         <service
-            android:name="com.season.pluginlib.PluginManagerService"
+            android:name=".core.PluginManagerService"
             android:label="@string/service_name_plugin_manager_service" />
 
         <activity
-            android:name="com.season.pluginlib.stub.ShortcutProxyActivity"
+            android:name=".stub.ShortcutProxyActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
@@ -46,7 +46,7 @@
         <!--预注册一些Activity，为了插件使用-->
         <!--第0个进程-->
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$Standard00"
+            android:name=".stub.ActivityStub$P00$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -64,7 +64,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleInstance00"
+            android:name=".stub.ActivityStub$P00$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -81,7 +81,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleInstance01"
+            android:name=".stub.ActivityStub$P00$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -98,7 +98,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleInstance02"
+            android:name=".stub.ActivityStub$P00$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -115,7 +115,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleInstance03"
+            android:name=".stub.ActivityStub$P00$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -132,7 +132,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleTask00"
+            android:name=".stub.ActivityStub$P00$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -149,7 +149,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleTask01"
+            android:name=".stub.ActivityStub$P00$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -166,7 +166,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleTask02"
+            android:name=".stub.ActivityStub$P00$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -183,7 +183,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleTask03"
+            android:name=".stub.ActivityStub$P00$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -200,7 +200,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleTop00"
+            android:name=".stub.ActivityStub$P00$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -217,7 +217,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleTop01"
+            android:name=".stub.ActivityStub$P00$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -234,7 +234,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleTop02"
+            android:name=".stub.ActivityStub$P00$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -251,7 +251,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P00$SingleTop03"
+            android:name=".stub.ActivityStub$P00$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -270,7 +270,7 @@
 
 
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$Standard00"
+            android:name=".stub.ActivityStub$Dialog$P00$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -287,7 +287,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleInstance00"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -304,7 +304,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleInstance01"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -321,7 +321,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleInstance02"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -338,7 +338,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleInstance03"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -355,7 +355,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleTask00"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -372,7 +372,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleTask01"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -389,7 +389,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleTask02"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -406,7 +406,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleTask03"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -423,7 +423,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleTop00"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -440,7 +440,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleTop01"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -457,7 +457,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleTop02"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -474,7 +474,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P00$SingleTop03"
+            android:name=".stub.ActivityStub$Dialog$P00$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -492,7 +492,7 @@
         </activity>
 
         <service
-            android:name="com.season.pluginlib.stub.ServiceStub$StubP00$P00"
+            android:name=".stub.ServiceStub$StubP00$P00"
             android:exported="false"
             android:label="@string/stub_name_service">
             <intent-filter>
@@ -504,7 +504,7 @@
 
         <!--第1个进程-->
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$Standard00"
+            android:name=".stub.ActivityStub$P01$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -522,7 +522,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleInstance00"
+            android:name=".stub.ActivityStub$P01$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -540,7 +540,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleInstance01"
+            android:name=".stub.ActivityStub$P01$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -558,7 +558,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleInstance02"
+            android:name=".stub.ActivityStub$P01$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -576,7 +576,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleInstance03"
+            android:name=".stub.ActivityStub$P01$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -594,7 +594,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleTask00"
+            android:name=".stub.ActivityStub$P01$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -612,7 +612,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleTask01"
+            android:name=".stub.ActivityStub$P01$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -630,7 +630,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleTask02"
+            android:name=".stub.ActivityStub$P01$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -648,7 +648,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleTask03"
+            android:name=".stub.ActivityStub$P01$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -667,7 +667,7 @@
         </activity>
 
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleTop00"
+            android:name=".stub.ActivityStub$P01$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -685,7 +685,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleTop01"
+            android:name=".stub.ActivityStub$P01$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -703,7 +703,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleTop02"
+            android:name=".stub.ActivityStub$P01$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -721,7 +721,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P01$SingleTop03"
+            android:name=".stub.ActivityStub$P01$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -740,7 +740,7 @@
         </activity>
 
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$Standard00"
+            android:name=".stub.ActivityStub$Dialog$P01$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -758,7 +758,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleInstance00"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -776,7 +776,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleInstance01"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -794,7 +794,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleInstance02"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -812,7 +812,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleInstance03"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -830,7 +830,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleTask00"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -848,7 +848,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleTask01"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -866,7 +866,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleTask02"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -884,7 +884,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleTask03"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -902,7 +902,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleTop00"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -920,7 +920,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleTop01"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -938,7 +938,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleTop02"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -956,7 +956,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P01$SingleTop03"
+            android:name=".stub.ActivityStub$Dialog$P01$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -976,7 +976,7 @@
 
 
         <service
-            android:name="com.season.pluginlib.stub.ServiceStub$StubP01$P00"
+            android:name=".stub.ServiceStub$StubP01$P00"
             android:exported="false"
             android:label="@string/stub_name_service"
             android:process=":PluginP01">
@@ -988,7 +988,7 @@
 
         <!--第2个进程-->
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$Standard00"
+            android:name=".stub.ActivityStub$P02$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1006,7 +1006,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleInstance00"
+            android:name=".stub.ActivityStub$P02$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1024,7 +1024,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleInstance01"
+            android:name=".stub.ActivityStub$P02$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1042,7 +1042,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleInstance02"
+            android:name=".stub.ActivityStub$P02$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1060,7 +1060,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleInstance03"
+            android:name=".stub.ActivityStub$P02$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1078,7 +1078,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleTask00"
+            android:name=".stub.ActivityStub$P02$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1096,7 +1096,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleTask01"
+            android:name=".stub.ActivityStub$P02$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1114,7 +1114,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleTask02"
+            android:name=".stub.ActivityStub$P02$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1132,7 +1132,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleTask03"
+            android:name=".stub.ActivityStub$P02$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1150,7 +1150,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleTop00"
+            android:name=".stub.ActivityStub$P02$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1168,7 +1168,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleTop01"
+            android:name=".stub.ActivityStub$P02$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1186,7 +1186,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleTop02"
+            android:name=".stub.ActivityStub$P02$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1204,7 +1204,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P02$SingleTop03"
+            android:name=".stub.ActivityStub$P02$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1223,7 +1223,7 @@
         </activity>
 
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$Standard00"
+            android:name=".stub.ActivityStub$Dialog$P02$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1241,7 +1241,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleInstance00"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1259,7 +1259,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleInstance01"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1277,7 +1277,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleInstance02"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1295,7 +1295,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleInstance03"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1313,7 +1313,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleTask00"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1331,7 +1331,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleTask01"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1349,7 +1349,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleTask02"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1367,7 +1367,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleTask03"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1385,7 +1385,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleTop00"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1403,7 +1403,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleTop01"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1421,7 +1421,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleTop02"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1439,7 +1439,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P02$SingleTop03"
+            android:name=".stub.ActivityStub$Dialog$P02$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1458,7 +1458,7 @@
         </activity>
 
         <service
-            android:name="com.season.pluginlib.stub.ServiceStub$StubP02$P00"
+            android:name=".stub.ServiceStub$StubP02$P00"
             android:exported="false"
             android:label="@string/stub_name_service"
             android:process=":PluginP02">
@@ -1471,7 +1471,7 @@
 
         <!--第3个进程-->
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$Standard00"
+            android:name=".stub.ActivityStub$P03$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1489,7 +1489,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleInstance00"
+            android:name=".stub.ActivityStub$P03$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1507,7 +1507,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleInstance01"
+            android:name=".stub.ActivityStub$P03$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1525,7 +1525,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleInstance02"
+            android:name=".stub.ActivityStub$P03$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1543,7 +1543,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleInstance03"
+            android:name=".stub.ActivityStub$P03$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1561,7 +1561,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleTask00"
+            android:name=".stub.ActivityStub$P03$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1579,7 +1579,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleTask01"
+            android:name=".stub.ActivityStub$P03$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1597,7 +1597,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleTask02"
+            android:name=".stub.ActivityStub$P03$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1615,7 +1615,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleTask03"
+            android:name=".stub.ActivityStub$P03$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1633,7 +1633,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleTop00"
+            android:name=".stub.ActivityStub$P03$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1651,7 +1651,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleTop01"
+            android:name=".stub.ActivityStub$P03$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1669,7 +1669,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleTop02"
+            android:name=".stub.ActivityStub$P03$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1687,7 +1687,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P03$SingleTop03"
+            android:name=".stub.ActivityStub$P03$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1707,7 +1707,7 @@
 
 
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$Standard00"
+            android:name=".stub.ActivityStub$Dialog$P03$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1725,7 +1725,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleInstance00"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1743,7 +1743,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleInstance01"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1761,7 +1761,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleInstance02"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1779,7 +1779,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleInstance03"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1797,7 +1797,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleTask00"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1815,7 +1815,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleTask01"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1833,7 +1833,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleTask02"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1851,7 +1851,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleTask03"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1869,7 +1869,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleTop00"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1887,7 +1887,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleTop01"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1905,7 +1905,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleTop02"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1923,7 +1923,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P03$SingleTop03"
+            android:name=".stub.ActivityStub$Dialog$P03$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1942,7 +1942,7 @@
         </activity>
 
         <service
-            android:name="com.season.pluginlib.stub.ServiceStub$StubP03$P00"
+            android:name=".stub.ServiceStub$StubP03$P00"
             android:exported="false"
             android:label="@string/stub_name_service"
             android:process=":PluginP03">
@@ -1955,7 +1955,7 @@
 
         <!--第4个进程-->
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$Standard00"
+            android:name=".stub.ActivityStub$P04$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1973,7 +1973,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleInstance00"
+            android:name=".stub.ActivityStub$P04$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -1991,7 +1991,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleInstance01"
+            android:name=".stub.ActivityStub$P04$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2009,7 +2009,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleInstance02"
+            android:name=".stub.ActivityStub$P04$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2027,7 +2027,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleInstance03"
+            android:name=".stub.ActivityStub$P04$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2045,7 +2045,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleTask00"
+            android:name=".stub.ActivityStub$P04$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2063,7 +2063,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleTask01"
+            android:name=".stub.ActivityStub$P04$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2081,7 +2081,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleTask02"
+            android:name=".stub.ActivityStub$P04$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2099,7 +2099,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleTask03"
+            android:name=".stub.ActivityStub$P04$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2117,7 +2117,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleTop00"
+            android:name=".stub.ActivityStub$P04$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2135,7 +2135,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleTop01"
+            android:name=".stub.ActivityStub$P04$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2153,7 +2153,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleTop02"
+            android:name=".stub.ActivityStub$P04$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2171,7 +2171,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P04$SingleTop03"
+            android:name=".stub.ActivityStub$P04$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2190,7 +2190,7 @@
         </activity>
 
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$Standard00"
+            android:name=".stub.ActivityStub$Dialog$P04$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2208,7 +2208,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleInstance00"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2226,7 +2226,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleInstance01"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2244,7 +2244,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleInstance02"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2262,7 +2262,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleInstance03"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2280,7 +2280,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleTask00"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2298,7 +2298,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleTask01"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2316,7 +2316,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleTask02"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2334,7 +2334,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleTask03"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2352,7 +2352,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleTop00"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2370,7 +2370,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleTop01"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2388,7 +2388,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleTop02"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2406,7 +2406,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P04$SingleTop03"
+            android:name=".stub.ActivityStub$Dialog$P04$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2425,7 +2425,7 @@
         </activity>
 
         <service
-            android:name="com.season.pluginlib.stub.ServiceStub$StubP04$P00"
+            android:name=".stub.ServiceStub$StubP04$P00"
             android:exported="false"
             android:label="@string/stub_name_service"
             android:process=":PluginP04">
@@ -2437,7 +2437,7 @@
 
         <!--第5个进程-->
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$Standard00"
+            android:name=".stub.ActivityStub$P05$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2455,7 +2455,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleInstance00"
+            android:name=".stub.ActivityStub$P05$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2473,7 +2473,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleInstance01"
+            android:name=".stub.ActivityStub$P05$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2491,7 +2491,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleInstance02"
+            android:name=".stub.ActivityStub$P05$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2509,7 +2509,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleInstance03"
+            android:name=".stub.ActivityStub$P05$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2527,7 +2527,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleTask00"
+            android:name=".stub.ActivityStub$P05$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2545,7 +2545,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleTask01"
+            android:name=".stub.ActivityStub$P05$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2563,7 +2563,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleTask02"
+            android:name=".stub.ActivityStub$P05$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2581,7 +2581,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleTask03"
+            android:name=".stub.ActivityStub$P05$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2599,7 +2599,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleTop00"
+            android:name=".stub.ActivityStub$P05$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2617,7 +2617,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleTop01"
+            android:name=".stub.ActivityStub$P05$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2635,7 +2635,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleTop02"
+            android:name=".stub.ActivityStub$P05$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2653,7 +2653,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P05$SingleTop03"
+            android:name=".stub.ActivityStub$P05$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2672,7 +2672,7 @@
         </activity>
 
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$Standard00"
+            android:name=".stub.ActivityStub$Dialog$P05$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2690,7 +2690,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleInstance00"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2708,7 +2708,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleInstance01"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2726,7 +2726,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleInstance02"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2744,7 +2744,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleInstance03"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2762,7 +2762,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleTask00"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2780,7 +2780,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleTask01"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2798,7 +2798,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleTask02"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2816,7 +2816,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleTask03"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2834,7 +2834,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleTop00"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2852,7 +2852,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleTop01"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2870,7 +2870,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleTop02"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2888,7 +2888,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P05$SingleTop03"
+            android:name=".stub.ActivityStub$Dialog$P05$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2907,7 +2907,7 @@
         </activity>
 
         <service
-            android:name="com.season.pluginlib.stub.ServiceStub$StubP05$P00"
+            android:name=".stub.ServiceStub$StubP05$P00"
             android:exported="false"
             android:label="@string/stub_name_service"
             android:process=":PluginP05">
@@ -2920,7 +2920,7 @@
 
         <!--第6个进程-->
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$Standard00"
+            android:name=".stub.ActivityStub$P06$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2938,7 +2938,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleInstance00"
+            android:name=".stub.ActivityStub$P06$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2956,7 +2956,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleInstance01"
+            android:name=".stub.ActivityStub$P06$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2974,7 +2974,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleInstance02"
+            android:name=".stub.ActivityStub$P06$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -2992,7 +2992,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleInstance03"
+            android:name=".stub.ActivityStub$P06$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3010,7 +3010,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleTask00"
+            android:name=".stub.ActivityStub$P06$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3028,7 +3028,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleTask01"
+            android:name=".stub.ActivityStub$P06$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3046,7 +3046,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleTask02"
+            android:name=".stub.ActivityStub$P06$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3064,7 +3064,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleTask03"
+            android:name=".stub.ActivityStub$P06$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3082,7 +3082,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleTop00"
+            android:name=".stub.ActivityStub$P06$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3100,7 +3100,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleTop01"
+            android:name=".stub.ActivityStub$P06$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3118,7 +3118,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleTop02"
+            android:name=".stub.ActivityStub$P06$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3136,7 +3136,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P06$SingleTop03"
+            android:name=".stub.ActivityStub$P06$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3156,7 +3156,7 @@
 
 
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$Standard00"
+            android:name=".stub.ActivityStub$Dialog$P06$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3174,7 +3174,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleInstance00"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3192,7 +3192,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleInstance01"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3210,7 +3210,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleInstance02"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3228,7 +3228,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleInstance03"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3246,7 +3246,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleTask00"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3264,7 +3264,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleTask01"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3282,7 +3282,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleTask02"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3300,7 +3300,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleTask03"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3318,7 +3318,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleTop00"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3336,7 +3336,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleTop01"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3354,7 +3354,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleTop02"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3372,7 +3372,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P06$SingleTop03"
+            android:name=".stub.ActivityStub$Dialog$P06$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3391,7 +3391,7 @@
         </activity>
 
         <service
-            android:name="com.season.pluginlib.stub.ServiceStub$StubP06$P00"
+            android:name=".stub.ServiceStub$StubP06$P00"
             android:exported="false"
             android:label="@string/stub_name_service"
             android:process=":PluginP06">
@@ -3404,7 +3404,7 @@
 
         <!--第7个进程-->
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$Standard00"
+            android:name=".stub.ActivityStub$P07$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3422,7 +3422,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleInstance00"
+            android:name=".stub.ActivityStub$P07$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3440,7 +3440,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleInstance01"
+            android:name=".stub.ActivityStub$P07$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3458,7 +3458,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleInstance02"
+            android:name=".stub.ActivityStub$P07$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3476,7 +3476,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleInstance03"
+            android:name=".stub.ActivityStub$P07$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3494,7 +3494,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleTask00"
+            android:name=".stub.ActivityStub$P07$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3512,7 +3512,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleTask01"
+            android:name=".stub.ActivityStub$P07$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3530,7 +3530,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleTask02"
+            android:name=".stub.ActivityStub$P07$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3548,7 +3548,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleTask03"
+            android:name=".stub.ActivityStub$P07$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3566,7 +3566,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleTop00"
+            android:name=".stub.ActivityStub$P07$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3584,7 +3584,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleTop01"
+            android:name=".stub.ActivityStub$P07$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3602,7 +3602,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleTop02"
+            android:name=".stub.ActivityStub$P07$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3620,7 +3620,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P07$SingleTop03"
+            android:name=".stub.ActivityStub$P07$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3638,7 +3638,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$Standard00"
+            android:name=".stub.ActivityStub$Dialog$P07$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3656,7 +3656,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleInstance00"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3674,7 +3674,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleInstance01"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3692,7 +3692,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleInstance02"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3710,7 +3710,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleInstance03"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3728,7 +3728,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleTask00"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3746,7 +3746,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleTask01"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3764,7 +3764,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleTask02"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3782,7 +3782,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleTask03"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3800,7 +3800,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleTop00"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3818,7 +3818,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleTop01"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3836,7 +3836,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleTop02"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3854,7 +3854,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P07$SingleTop03"
+            android:name=".stub.ActivityStub$Dialog$P07$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3874,7 +3874,7 @@
 
 
         <service
-            android:name="com.season.pluginlib.stub.ServiceStub$StubP07$P00"
+            android:name=".stub.ServiceStub$StubP07$P00"
             android:exported="false"
             android:label="@string/stub_name_service"
             android:process=":PluginP07">
@@ -3890,7 +3890,7 @@
 
         <!--第8个进程-->
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$Standard00"
+            android:name=".stub.ActivityStub$P08$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3908,7 +3908,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleInstance00"
+            android:name=".stub.ActivityStub$P08$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3926,7 +3926,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleInstance01"
+            android:name=".stub.ActivityStub$P08$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3944,7 +3944,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleInstance02"
+            android:name=".stub.ActivityStub$P08$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3962,7 +3962,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleInstance03"
+            android:name=".stub.ActivityStub$P08$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3980,7 +3980,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleTask00"
+            android:name=".stub.ActivityStub$P08$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -3998,7 +3998,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleTask01"
+            android:name=".stub.ActivityStub$P08$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4016,7 +4016,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleTask02"
+            android:name=".stub.ActivityStub$P08$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4034,7 +4034,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleTask03"
+            android:name=".stub.ActivityStub$P08$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4052,7 +4052,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleTop00"
+            android:name=".stub.ActivityStub$P08$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4070,7 +4070,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleTop01"
+            android:name=".stub.ActivityStub$P08$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4088,7 +4088,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleTop02"
+            android:name=".stub.ActivityStub$P08$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4106,7 +4106,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$P08$SingleTop03"
+            android:name=".stub.ActivityStub$P08$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4125,7 +4125,7 @@
         </activity>
 
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$Standard00"
+            android:name=".stub.ActivityStub$Dialog$P08$Standard00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4143,7 +4143,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleInstance00"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleInstance00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4161,7 +4161,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleInstance01"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleInstance01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4179,7 +4179,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleInstance02"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleInstance02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4197,7 +4197,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleInstance03"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleInstance03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4215,7 +4215,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleTask00"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleTask00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4233,7 +4233,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleTask01"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleTask01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4251,7 +4251,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleTask02"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleTask02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4269,7 +4269,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleTask03"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleTask03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4287,7 +4287,7 @@
                 android:value="3" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleTop00"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleTop00"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4305,7 +4305,7 @@
                 android:value="0" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleTop01"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleTop01"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4323,7 +4323,7 @@
                 android:value="1" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleTop02"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleTop02"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -4341,7 +4341,7 @@
                 android:value="2" />
         </activity>
         <activity
-            android:name="com.season.pluginlib.stub.ActivityStub$Dialog$P08$SingleTop03"
+            android:name=".stub.ActivityStub$Dialog$P08$SingleTop03"
             android:allowTaskReparenting="true"
             android:excludeFromRecents="true"
             android:exported="false"

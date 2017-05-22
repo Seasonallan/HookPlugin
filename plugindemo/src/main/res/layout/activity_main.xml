@@ -19,10 +19,16 @@
         android:layout_centerHorizontal="true"
         fresco:actualImageScaleType="centerCrop"
         fresco:fadeDuration="300"
-        fresco:failureImage="@mipmap/launchimage"
+        fresco:failureImage="@mipmap/ic_launcher"
         fresco:failureImageScaleType="centerCrop"
-        fresco:placeholderImage="@mipmap/launchimage"
+        fresco:placeholderImage="@mipmap/ic_launcher"
         fresco:placeholderImageScaleType="fitXY"/>
+
+    <com.season.plugindemo.SameModel
+        android:id="@+id/plugin_samemodel"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:background="@android:color/holo_red_dark"/>
 
     <TextView
         android:id="@+id/plugin_text"

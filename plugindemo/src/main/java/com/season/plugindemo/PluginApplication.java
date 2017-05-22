@@ -14,9 +14,14 @@ import java.io.File;
  */
 public class PluginApplication extends Application {
 
+    public static int level;
+
     @Override
     public void onCreate() {
         super.onCreate();
+
+        level = 0;
+
         Log.e("SeasonLog", "PluginApplication onCreate");
 
         File file = getFilesDir();
