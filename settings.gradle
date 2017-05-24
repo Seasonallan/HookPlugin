@@ -1,1 +1,1 @@
-include ':app', ':plugindemo'
+include ':HookPluginLibrary', ':plugindemo', ':app'

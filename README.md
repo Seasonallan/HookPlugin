@@ -1,3 +1,6 @@
 # HookPlugin
 HookPlugin on Android
-学习Android插件之路
+Android插件
+基于DroidPlugin进行功能简化
+只提供Activity和Service的插件化
+
